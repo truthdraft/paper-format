@@ -1,0 +1,92 @@
+{
+  "$comment": "AI PROMPT — Use the IEEE conference paper format below and the sourceContent provided by the user. Preserve technical meaning, numerical results, citations, equations, and author details. Never invent facts, experiments, references, affiliations, or identifiers. Organize the complete manuscript into the fields below. Keep the format and page objects unchanged. Return only one valid JSON object with no Markdown fences and no text before or after it. Leave unknown metadata empty. Write the abstract as one self-contained paragraph of at most 250 words, without citations, footnotes, or equations. Provide 3–5 index terms when the source supports them. Number references by first citation and preserve their complete bibliographic data. Put body material in ordered section content blocks. Use equation, figure, and table blocks only when the source contains them. Return sourceContent as an empty string. The $comment is instruction metadata and must never appear in the rendered paper.",
+  "format": "IEEE conference",
+  "page": {
+    "size": "A4",
+    "widthMm": 210,
+    "heightMm": 297,
+    "columns": 2,
+    "columnGapPt": 12,
+    "paperClass": "IEEEtran conference, a4paper"
+  },
+  "sourceContent": "PASTE THE COMPLETE PAPER CONTENT HERE BEFORE SENDING THIS JSON TO YOUR AI",
+  "title": "",
+  "authors": [
+    {
+      "name": "",
+      "department": "",
+      "institution": "",
+      "city": "",
+      "country": "",
+      "email": "",
+      "orcid": ""
+    }
+  ],
+  "abstract": "",
+  "indexTerms": [],
+  "sections": [
+    {
+      "heading": "Introduction",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": ""
+        },
+        {
+          "type": "subsection",
+          "heading": "",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "label": "",
+          "latex": ""
+        },
+        {
+          "type": "figure",
+          "id": "fig1",
+          "caption": "",
+          "altText": "",
+          "imageDataUri": ""
+        },
+        {
+          "type": "table",
+          "id": "tab1",
+          "caption": "",
+          "columns": [],
+          "rows": []
+        }
+      ]
+    }
+  ],
+  "funding": {
+    "agency": "",
+    "grantNumber": "",
+    "statement": ""
+  },
+  "acknowledgment": "",
+  "references": [
+    {
+      "authors": "",
+      "title": "",
+      "publication": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "year": "",
+      "doi": "",
+      "url": ""
+    }
+  ],
+  "appendices": [
+    {
+      "heading": "",
+      "content": ""
+    }
+  ]
+}

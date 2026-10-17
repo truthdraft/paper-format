@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ec">
+  <meta name="description" content="Prepare an IEEE conference paper in A4 format. Compile your paper JSON, review the layout, and export an editable Word document.">
+  <title>IEEE Paper Formatter | TruthDraft</title>
+  <script>
+    try { if (localStorage.getItem('truthdraft_theme') === 'dark') document.documentElement.classList.add('dark'); } catch {}
+    if (/^\/paper-format\/?$/.test(location.pathname)) {
+      const base = document.createElement('base');
+      base.href = '/paper-format/';
+      document.head.append(base);
+    }
+  </script>
+  <link rel="icon" href="assets/truthdraft-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="global-header">
+    <nav class="global-header-inner" aria-label="Main navigation">
+      <a href="/" class="global-brand" aria-label="TruthDraft home"><img src="assets/truthdraft-mark.svg" alt="" class="global-brand-icon"><span>TruthDraft</span></a>
+      <div class="global-nav-links">
+        <a href="/detector">AI detector</a>
+        <a href="/humanizer">AI humanizer</a>
+        <a href="/blog/">Writing guides</a>
+        <a href="/about">About</a>
+        <a href="/#faq">Questions</a>
+      </div>
+      <div class="header-actions">
+        <a class="global-header-cta" href="/humanizer"><span>Revise my text</span><span aria-hidden="true">→</span></a>
+        <button id="themeButton" class="theme-button" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span aria-hidden="true">◐</span></button>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
+          <div class="mobile-nav-menu">
+            <a href="/detector">AI detector</a><a href="/humanizer">AI humanizer</a><a href="/blog/">Writing guides</a><a href="/about">About TruthDraft</a><a href="/#faq">Questions</a><span class="mobile-menu-divider"></span><a href="/contact">Contact support</a><a href="/privacy-policy">Privacy policy</a><a href="/terms">Terms of service</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro" id="how-it-works">
+      <div class="intro-copy">
+        <div class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> TRUTHDRAFT <span class="eyebrow-divider">/</span> PAPER TOOLS</div>
+        <h1>Make room for the ideas in your paper.</h1>
+        <p>Turn your completed paper JSON into an IEEE conference layout. Review the A4 paper beside your input, then export it when everything looks right.</p>
+      </div>
+      <div class="intro-badges" aria-label="Format details">
+        <span class="format-chip"><span class="chip-dot"></span> IEEE conference</span>
+        <span class="format-chip">A4 · 210 × 297 mm</span>
+        <span class="format-chip">Private in this browser</span>
+      </div>
+    </section>
+
+    <section class="workflow" aria-label="How the paper formatter works">
+      <div class="workflow-step"><span class="workflow-number">01</span><div><b>Give the format to your AI</b><span>Share the JSON template and paper content.</span></div></div>
+      <span class="workflow-connector" aria-hidden="true"></span>
+      <div class="workflow-step"><span class="workflow-number">02</span><div><b>Paste its paper JSON</b><span>Compile the completed response below.</span></div></div>
+      <span class="workflow-connector" aria-hidden="true"></span>
+      <div class="workflow-step"><span class="workflow-number">03</span><div><b>Review, then export</b><span>Check the A4 layout before downloading.</span></div></div>
+    </section>
+
+    <section class="compiler-workspace" id="editor" aria-label="IEEE paper compiler">
+      <aside class="editor-panel compiler-panel">
+        <div class="panel-heading">
+          <div class="panel-heading-copy"><span class="panel-icon" aria-hidden="true">{ }</span><div><div class="panel-kicker">YOUR WORKSPACE</div><h2>Compile your paper</h2></div></div>
+          <div class="save-state"><span id="saveDot"></span><span id="saveStatus">Ready</span></div>
+        </div>
+
+        <div class="template-bar">
+          <div class="template-copy"><span class="template-icon" aria-hidden="true">↗</span><div><b>Need the AI format?</b><small>Copy or download the IEEE A4 JSON template.</small></div></div>
+          <div class="template-actions">
+            <button id="copyFormat" class="template-button" type="button"><span aria-hidden="true">▣</span> Copy</button>
+            <a class="template-button" href="ieee-a4-format.json" download><span aria-hidden="true">↓</span> Download</a>
+            <button id="loadFormat" class="template-link" type="button">Load into editor</button>
+          </div>
+        </div>
+
+        <div class="editor-label-row"><label for="paperJson" class="field-label">Completed paper JSON</label><span class="editor-label-note">Paste the response from your AI</span></div>
+        <div class="editor-surface"><div class="editor-gutter" aria-hidden="true"><span>JSON</span><span class="editor-lock">LOCAL</span></div><textarea id="paperJson" class="json-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Completed IEEE paper JSON" placeholder="Paste the complete paper JSON here…"></textarea></div>
+
+        <div id="compileMessage" class="compile-message" role="status" aria-live="polite"><span class="message-mark" aria-hidden="true">i</span><span>Paste your completed paper JSON, then compile it.</span></div>
+        <div class="compiler-actions"><button id="compilePaper" class="primary-button" type="button"><span>Compile paper</span><span class="button-arrow" aria-hidden="true">→</span></button><button id="clearJson" class="clear-button" type="button">Clear</button></div>
+        <div id="report" class="report" aria-live="polite"></div>
+        <p class="privacy-note"><span aria-hidden="true">◉</span> Your paper stays in this browser. Nothing is uploaded.</p>
+      </aside>
+
+      <section class="preview-panel" aria-label="Paper preview">
+        <div class="preview-toolbar">
+          <div class="preview-title"><span class="preview-live-dot"></span><div><div class="panel-kicker">LIVE REVIEW</div><h2>Paper preview</h2><small>IEEE conference · A4 · two columns</small></div></div>
+          <div class="preview-tools">
+            <div class="zoom-control" aria-label="Preview zoom"><button id="zoomOut" type="button" aria-label="Zoom out">−</button><span id="zoomLabel">80%</span><button id="zoomIn" type="button" aria-label="Zoom in">+</button></div>
+            <button id="printPaper" class="preview-action" type="button"><span aria-hidden="true">▤</span><span>Print</span></button>
+            <button id="downloadDocx" class="preview-action download-action" type="button" disabled><span aria-hidden="true">↓</span><span>Download DOCX</span></button>
+          </div>
+        </div>
+        <div class="paper-stage"><article class="paper" id="paper"><div id="paperContent" class="paper-empty"><div class="empty-illustration" aria-hidden="true"><span class="empty-page"><i></i><i></i><i></i><i></i></span><span class="empty-spark">✳</span></div><b>Your paper will appear here</b><p>Paste the completed JSON and select <strong>Compile paper</strong> to build a side-by-side preview.</p><span class="empty-format">A4 · IEEE CONFERENCE</span></div></article></div>
+        <div class="preview-footer"><span><b id="pageEstimate">—</b> estimated pages</span><span id="previewState">Waiting for paper JSON</span></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="global-footer">
+    <div class="global-footer-inner">
+      <div class="global-footer-grid">
+        <div><a href="/" class="global-footer-brand"><img src="assets/truthdraft-mark-dark.svg" alt="" class="global-footer-brand-icon"><span>TruthDraft</span></a><p class="global-footer-description">A clear, private way to prepare and review IEEE conference papers in A4 format.</p></div>
+        <div><h2 class="global-footer-title">Products</h2><div class="global-footer-links"><a href="/detector">AI writing detector</a><a href="/humanizer">AI text humanizer</a></div></div>
+        <div><h2 class="global-footer-title">Learn</h2><div class="global-footer-links"><a href="/blog/">Writing guides</a><a href="/#faq">Questions</a></div></div>
+        <div><h2 class="global-footer-title">Information</h2><div class="global-footer-links"><a href="/about">About TruthDraft</a><a href="/privacy-policy">Privacy policy</a><a href="/terms">Terms of service</a><a href="/contact">Contact</a></div></div>
+      </div>
+      <div class="global-footer-bottom"><span>© 2026 TruthDraft · IEEE A4 paper formatter</span><span>Your paper stays in this browser. <a href="/privacy-policy">Read our privacy policy</a>.</span></div>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 8 106 108" role="img" aria-label="TruthDraft">
+  <title>TruthDraft</title>
+  <defs>
+    <mask id="td-head-dark-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="130" height="130">
+      <rect width="130" height="130" fill="#FFFFFF" />
+      <circle cx="84" cy="84" r="29" fill="#000000" />
+    </mask>
+  </defs>
+
+  <g mask="url(#td-head-dark-mask)">
+    <path d="M 28 14 C 23.58 14 20 17.58 20 22 L 20 98 C 20 102.42 23.58 106 28 106 L 80 106 C 84.42 106 88 102.42 88 98 L 88 38 L 64 14 Z"
+          fill="#F7F3EC" />
+    <path d="M 64 14 L 88 38 L 68 38 C 65.79 38 64 36.21 64 34 Z"
+          fill="#DDD6C8" />
+
+    <g stroke="#1C2B3A" stroke-opacity="0.35" stroke-width="5" stroke-linecap="round">
+      <line x1="32" y1="36" x2="52" y2="36" />
+      <line x1="32" y1="50" x2="58" y2="50" />
+      <line x1="32" y1="64" x2="46" y2="64" />
+    </g>
+  </g>
+
+  <circle cx="84" cy="84" r="26" fill="#BD5B3A" />
+  <path d="M 72 73.5 C 73.8 73.5 75.2 73.1 75.8 72.1 L 76.5 71 L 91.5 71 L 92.2 72.1 C 92.8 73.1 94.2 73.5 96 73.5 L 96 75.8 L 87.8 75.8 L 87.8 93.2 C 87.8 95.1 88.6 96 90.8 96.2 L 90.8 97 L 77.2 97 L 77.2 96.2 C 79.4 96 80.2 95.1 80.2 93.2 L 80.2 75.8 L 72 75.8 Z"
+        fill="#F7F3EC" />
+</svg>
