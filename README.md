@@ -7,11 +7,11 @@
 <p align="center">
   Turn structured IEEE paper JSON into a two-column A4 preview and an editable Word document.
   <br>
-  <a href="https://truthdraft.com/paper-format"><strong>Open the formatter »</strong></a>
+  <a href="https://truthdraft.com/formatter"><strong>Open the formatter »</strong></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/truthdraft/paper-format"><img src="https://img.shields.io/badge/TruthDraft-Paper%20Tools-1C2B3A?style=for-the-badge" alt="TruthDraft Paper Tools"></a>
+  <a href="https://github.com/truthdraft/paper-formatter"><img src="https://img.shields.io/badge/TruthDraft-Paper%20Tools-1C2B3A?style=for-the-badge" alt="TruthDraft Paper Tools"></a>
   <img src="https://img.shields.io/badge/Page%20size-A4-BD5B3A?style=for-the-badge" alt="A4 page size">
   <img src="https://img.shields.io/badge/Format-IEEE%20Conference-9E4B2C?style=for-the-badge" alt="IEEE conference format">
 </p>
@@ -58,8 +58,8 @@ The page size is **A4 (210 × 297 mm)**. The formatter does not convert US Lette
 ### Run locally
 
 ```sh
-git clone https://github.com/truthdraft/paper-format.git
-cd paper-format
+git clone https://github.com/truthdraft/paper-formatter.git
+cd paper-formatter
 npm start
 ```
 
